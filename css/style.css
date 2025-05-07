@@ -136,3 +136,43 @@
   color: white;
   transition: 0.25s;
 }
+
+#quote {
+  color: white;          /* 전체 테마와 맞춤 */
+  text-align: center;
+  margin-top: 6vh;       /* 시계·투두와 간격 확보 */
+  animation: fadeIn 1s linear;
+}
+
+#quote span:first-child { /* 인용문 본문 */
+  display: block;
+  font-size: 4vh;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+#quote span:last-child {  /* 인용문 출처(저자) */
+  display: block;
+  font-size: 3vh;
+  margin-top: 1vh;
+  opacity: 0.8;          /* 살짝 옅게 */
+}
+
+#weather{
+  margin:1.5rem auto 0;
+  display:flex;
+  gap:.75rem;
+  align-items:center;
+  justify-content:center;
+  padding:.6rem 1rem;
+  border:1px solid #e0e0e0;
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,.05);
+  font-size:1rem;          /* 사이트 기본 타이포에 맞추세요 */
+  color:#444;
+}
+.dark-mode #weather{       /* 다크모드 지원 시 */
+  border-color:#444;
+  color:#ddd;
+}
+#weather span:first-child{font-weight:600;}

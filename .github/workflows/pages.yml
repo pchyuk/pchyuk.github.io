@@ -1,0 +1,40 @@
+# .github/workflows/pages.yml
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Pages 빌드 설정
+      - uses: actions/configure-pages@v3
+
+      # 📌  secret → config.js 로 주입
+      - name: Generate config.js with secret
+        env:
+          OPENWEATHER_KEY: ${{ secrets.OPENWEATHER_KEY }}
+        run: |
+          echo "export const API_KEY = \"${OPENWEATHER_KEY}\";" > ./config.js
+
+      # 아티팩트 업로드
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
