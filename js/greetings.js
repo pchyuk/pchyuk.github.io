@@ -15,7 +15,7 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings(username) {
-  greeting.innerText = `Hello ${username}`;
+  greeting.innerText = `Hello ${username}!`;
   logoutForm.classList.remove(HIDDEN_CLASSNAME);
   logoutForm.addEventListener("submit", onLogoutSubmit);
 }
