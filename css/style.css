@@ -1,3 +1,138 @@
 .hidden {
   display: none;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: fadeIn 1s linear;
+}
+
+#clock {
+  color: white;
+  font-size: 15vh;
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+
+#login-form {
+  text-align: center;
+}
+
+#input_name {
+  font-size: 5vh;
+  border: none;
+  background: none;
+  color: white;
+  padding: 1vh;
+  border-bottom: solid white 0.5vh;
+  width: 33vw;
+}
+
+#input_name::placeholder {
+  color: white;
+}
+
+#login_btn {
+  font-size: 4vh;
+  border: none;
+  background-color: white;
+  color: gray;
+  padding: 1vh;
+  border-radius: 1vh;
+  width: 7vw;
+}
+
+#login_btn:hover {
+  background-color: lightgreen;
+  color: white;
+  transition: 0.25s;
+}
+
+#logout-form {
+  text-align: center;
+}
+
+#greeting {
+  font-size: 5vh;
+  color: white;
+}
+
+#logout_btn {
+  font-size: 4vh;
+  border: none;
+  background-color: white;
+  color: gray;
+  padding: 1vh;
+  border-radius: 1vh;
+  margin-left: 5vh;
+}
+
+#logout_btn:hover {
+  background-color: lightcoral;
+  color: white;
+  transition: 0.25s;
+}
+
+#todo-form {
+  text-align: center;
+}
+
+#todo-list {
+  text-align: center;
+  padding-left: 0;
+}
+
+#todo-input {
+  font-size: 4vh;
+  border: none;
+  background: none;
+  color: white;
+  padding: 1vh;
+  border-bottom: solid white 0.5vh;
+  margin-top: 4vh;
+  width: 40vw;
+}
+
+#todo-input::placeholder {
+  color: white;
+}
+
+#todo-list {
+  color: white;
+  font-size: 3vh;
+}
+
+.todo {
+  margin-bottom: 1vh;
+}
+
+.todo-delete {
+  font-size: 3vh;
+  border: none;
+  background-color: white;
+  color: gray;
+  padding: 1vh;
+  border-radius: 1vh;
+  margin-left: 3vh;
+}
+
+.todo-delete:hover {
+  background-color: lightcoral;
+  color: white;
+  transition: 0.25s;
+}
